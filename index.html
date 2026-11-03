@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Re-City Logo 512x512</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0a0a0f;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Courier New', Courier, monospace; 
+        }
+
+        .logo-container {
+            /* Жестко задаем размеры и включаем рамку в них */
+            width: 512px;
+            height: 512px;
+            box-sizing: border-box; 
+            
+            background: radial-gradient(circle at center, #1a0b2e 0%, #050508 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid rgba(178, 102, 255, 0.3);
+        }
+
+        /* Сетка на фоне */
+        .logo-container::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: 
+                linear-gradient(rgba(178, 102, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(178, 102, 255, 0.05) 1px, transparent 1px);
+            background-size: 32px 32px;
+            z-index: 1;
+        }
+
+        /* Эффект сканирующих линий */
+        .logo-container::after {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
+            background-size: 100% 4px;
+            z-index: 5;
+            pointer-events: none;
+        }
+
+        .title {
+            font-size: 85px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            z-index: 10;
+            display: flex;
+        }
+
+        .re {
+            color: #b266ff;
+            text-shadow: 0 0 15px rgba(178, 102, 255, 0.8), 0 0 30px rgba(178, 102, 255, 0.4);
+        }
+
+        .city {
+            color: #ffffff;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: #8c8c8c;
+            letter-spacing: 8px;
+            margin-top: 20px;
+            z-index: 10;
+            text-transform: uppercase;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="logo-container" id="logo">
+        <div class="title">
+            <span class="re">Re</span><span class="city">-City</span>
+        </div>
+        <div class="subtitle">Re-invented</div>
+    </div>
+
+</body>
+</html>
